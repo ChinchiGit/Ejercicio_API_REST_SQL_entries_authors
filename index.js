@@ -1,0 +1,36 @@
+const express = require('express')
+const app = express()
+app.use(express.json());
+const port = 3000
+
+//rutas
+const entriesRoutes = require("./routes/entries.routes")
+const authorsRoutes = require("./routes/authors.routes")
+
+
+
+// Middlewares
+//const checkApiKey = require('./middlewares/auth_api_key');
+//const error404 = require('./middlewares/error404');
+const morgan = require('./middlewares/morgan');
+
+
+// Logger
+app.use(morgan(':method :host :status :param[id] - :response-time ms :body'));
+
+//Default
+app.get('/', (req, res) => {
+    res.send('Bienvenido a la BBDD de nuestro Blog de Noticias')
+  })
+app.use("/api/entries", entriesRoutes.router)
+app.use("/api/authors", authorsRoutes.router)
+
+
+// Para rutas no existentes
+app.get("*",(req,res)=>{
+    res.status(404).send("Gatito triste - 404 not found");
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on http://localhost:${port}`)
+})

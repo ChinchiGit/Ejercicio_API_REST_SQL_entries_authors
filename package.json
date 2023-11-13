@@ -2,10 +2,11 @@
   "name": "ejercicio_api_rest_entries_authors",
   "version": "1.0.0",
   "description": "Ejercicio para poner en practica consultas a base de datos relacional con API REST",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start" : "nodemon app.js"
+    "dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   "devDependencies": {
     "jest": "^29.7.0",
     "jest-stare": "^2.5.1",
+    "morgan": "^1.10.0",
     "supertest": "^6.3.3"
   },
   "dependencies": {
