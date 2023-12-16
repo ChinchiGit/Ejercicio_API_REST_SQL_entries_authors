@@ -14,10 +14,7 @@ const getAllAuthors = async () => {
     } catch (error) {
         console.log(error);
         throw error;
-    } finally {
-        if (client) {
-            client.release();}
-    }
+    } 
     return result
 }
 
@@ -31,10 +28,8 @@ const getAuthorByEmail = async (email) => {
     } catch (error) {
         console.log(error);
         throw error;
-    } finally {
-        if (client) {
-            client.release();}
-    }
+    } 
+
     return result
 }
 
@@ -49,10 +44,7 @@ const createAuthor = async (author) => {
     } catch (error) {
         console.log(error);
         throw error;
-    } finally {
-        if (client) {
-            client.release();}
-    }
+    } 
     return result;
 }
 
@@ -68,10 +60,7 @@ const updateAuthor = async (data) => {
     } catch (error) {
         console.log(error);
         throw error;
-    } finally {
-        if (client) {
-            client.release();}
-    }
+    } 
     return result
 }
 
@@ -86,10 +75,7 @@ const deleteAuthor = async (email) => {
     } catch (error) {
         console.log(error);
         throw error;
-    } finally {
-        if (client) {
-            client.release();}
-    }
+    } 
     console.log(result);
     return result;
 }
