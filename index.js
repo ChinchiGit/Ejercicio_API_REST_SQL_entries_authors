@@ -32,6 +32,6 @@ app.get("*",(req,res)=>{
     res.status(404).send("Gatito triste - 404 not found");
 })
 
-app.listen(port, () => {
+app.listen(PORT, () => {
   console.log(`Example app listening on http://localhost:${PORT}`)
 })
