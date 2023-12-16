@@ -15,7 +15,8 @@ const getAllEntries = async () => {
         console.log(err);
         throw err;
     } finally {
-        client.release();
+        if (client) {
+            client.release();}
     }
     return result
 }
@@ -40,7 +41,8 @@ const updateEntry = async (entry) => {
       console.log(error);
       throw error;
     } finally {
-      client.release();
+        if (client) {
+            client.release();}
     }
     return result;
   };
@@ -57,7 +59,8 @@ const deleteEntry = async (title) => {
         console.log(err);
         throw err;
     } finally {
-        client.release();
+        if (client) {
+            client.release();}
     }
     return result
 }
@@ -74,7 +77,8 @@ const createEntry = async (entry) => {
         console.log(error);
         throw error;
     } finally {
-        client.release();
+        if (client) {
+            client.release();}
     }
     return result;
 }

@@ -15,7 +15,8 @@ const getAllAuthors = async () => {
         console.log(error);
         throw error;
     } finally {
-        client.release();
+        if (client) {
+            client.release();}
     }
     return result
 }
@@ -31,7 +32,8 @@ const getAuthorByEmail = async (email) => {
         console.log(error);
         throw error;
     } finally {
-        client.release();
+        if (client) {
+            client.release();}
     }
     return result
 }
@@ -48,7 +50,8 @@ const createAuthor = async (author) => {
         console.log(error);
         throw error;
     } finally {
-        client.release();
+        if (client) {
+            client.release();}
     }
     return result;
 }
@@ -66,7 +69,8 @@ const updateAuthor = async (data) => {
         console.log(error);
         throw error;
     } finally {
-        client.release();
+        if (client) {
+            client.release();}
     }
     return result
 }
@@ -83,7 +87,8 @@ const deleteAuthor = async (email) => {
         console.log(error);
         throw error;
     } finally {
-        client.release();
+        if (client) {
+            client.release();}
     }
     console.log(result);
     return result;
